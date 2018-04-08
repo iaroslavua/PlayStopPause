@@ -1,0 +1,96 @@
+html {
+  font-size: 32px; }
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh; }
+
+.stop, .separator, .pause1, .pause2, .play-vertical, .play-angle-up, .play-angle-down, .play-none {
+  background-color: black;
+  border-radius: 1rem;
+  position: relative; }
+
+.stop, .separator, .pause1, .pause2, .play-vertical, .play-angle-up, .play-angle-down, .play-none {
+  transition: width 1s, height 1s, left 1s, right 1s, top 1s, bottom 1s, transform 1s; }
+
+#container {
+  width: 24rem;
+  height: 8rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center; }
+
+.element-container {
+  width: 8rem;
+  height: 8rem;
+  display: flex;
+  align-items: center;
+  justify-content: center; }
+
+.stop {
+  width: 8rem;
+  height: 8rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0; }
+
+.separator {
+  width: 1rem;
+  height: 10rem;
+  left: 1rem;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  transform: rotate(45deg); }
+
+.pause1, .pause2 {
+  display: inline-block;
+  width: 1.5rem;
+  height: 8rem;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  margin: 0.5rem; }
+
+.play-vertical {
+  width: 1rem;
+  height: 8rem;
+  left: 6.2rem;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  transition: width 1s, left 1s; }
+
+.play-angle-up {
+  width: 1rem;
+  height: 9rem;
+  left: -5.5rem;
+  right: 0;
+  bottom: 0;
+  top: 1.8rem;
+  transform: rotate(64deg); }
+
+.play-angle-down {
+  width: 1rem;
+  height: 9rem;
+  left: -6.5rem;
+  right: 0;
+  bottom: 0;
+  top: -1.8rem;
+  transform: rotate(-64deg); }
+
+.play-none {
+  width: 1rem;
+  height: 0rem;
+  left: -1.9rem;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  transform: rotate(0deg); }
+
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="style.css">
+
+		<meta charset="UTF-8">
+		<title>Play / Pause</title>
+	</head>
+
+	<body>
+
+        <div id="container">
+            <div class="element-container">
+                <div id="bar1" class="play-vertical"></div>
+            </div>
+            <div class="element-container">
+                <div id="bar2" class="play-none"></div>
+            </div>
+            <div class="element-container">
+                <div id="bar3" class="play-angle-up"></div>
+                <div id="bar4" class="play-angle-down"></div>
+            </div>
+        </div>
+
+		<script>
+			let container = document.getElementById('container');
+			let bar1 = document.getElementById('bar1');
+			let bar2 = document.getElementById('bar2');
+			let bar3 = document.getElementById('bar3');
+			let bar4 = document.getElementById('bar4');
+			container.onclick = () => {
+                bar1.className = bar1.className === 'stop' ? 'play-vertical' : 'stop';
+                bar2.className = bar2.className === 'separator' ? 'play-none' : 'separator';
+                bar3.className = bar3.className === 'pause1' ? 'play-angle-up' : 'pause1';
+                bar4.className = bar4.className === 'pause2' ? 'play-angle-down' : 'pause2';
+			};
+		</script>
+
+	</body>
+
+</html>

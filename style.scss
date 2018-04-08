@@ -1,0 +1,111 @@
+html {
+    font-size: 32px;
+}
+
+body {
+	margin: 0;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+%relativeshape {
+    background-color: black;
+    border-radius: 1rem;
+    position: relative;
+}
+
+%animated {
+    transition: width 1s, height 1s, left 1s, right 1s, top 1s, bottom 1s, transform 1s;
+}
+
+@mixin dimensions($width, $height) {
+    width: $width;
+    height: $height;
+}
+
+@mixin position($left, $right, $bottom, $top) {
+    left: $left;
+    right: $right;
+    bottom: $bottom;
+    top: $top;
+}
+
+#container {
+    @include dimensions(24rem, 8rem);
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.element-container {
+    @include dimensions(8rem, 8rem);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.stop {
+    @extend %relativeshape;
+    @extend %animated;
+    @include dimensions(8rem, 8rem);
+    @include position(0, 0, 0, 0);
+}
+
+.separator {
+    @extend %relativeshape;
+    @extend %animated;
+    @include dimensions(1rem, 10rem);
+    @include position(1rem, 0, 0, 0);
+    transform: rotate(45deg);
+}
+
+%pause {
+    @extend %relativeshape;
+    @extend %animated;
+    display: inline-block;
+    @include dimensions(1.5rem, 8rem);
+    @include position(0, 0, 0, 0);
+    margin: 0.5rem;
+}
+
+.pause1 {
+    @extend %pause;
+}
+
+.pause2 {
+    @extend %pause;
+}
+
+.play-vertical {
+    @extend %relativeshape;
+    @extend %animated;
+    @include dimensions(1rem, 8rem);
+    @include position(6.2rem, 0, 0, 0);
+    transition: width 1s, left 1s;
+}
+
+.play-angle-up {
+    @extend %relativeshape;
+    @extend %animated;
+    @include dimensions(1rem, 9rem);
+    @include position(-5.5rem, 0, 0, 1.8rem);
+    transform: rotate(64deg);
+}
+
+.play-angle-down {
+    @extend %relativeshape;
+    @extend %animated;
+    @include dimensions(1rem, 9rem);
+    @include position(-6.5rem, 0, 0, -1.8rem);
+    transform: rotate(-64deg);
+}
+
+.play-none {
+    @extend %relativeshape;
+    @extend %animated;
+    @include dimensions(1rem, 0rem);
+    @include position(-1.9rem, 0, 0, 0);
+    transform: rotate(0deg);
+}
